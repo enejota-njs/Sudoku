@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
     public int openMenu() {
-        System.out.println("|=========== SUDOKU ===========|");
+        System.out.println("\n|=========== SUDOKU ===========|");
         System.out.println("| [ 1 ] - Iniciar um novo jogo |");
         System.out.println("| [ 2 ] - Adicionar um número  |");
         System.out.println("| [ 3 ] - Remover um número    |");
@@ -21,17 +21,23 @@ public class Menu {
         var input = new Scanner(System.in);
         var option = 0;
 
-        do {
-            System.out.print("\nEscolha uma opção: ");
-            try {
-                option = input.nextInt();
-            } catch (Exception e) {
-                System.out.println("\nValor inválido.");
-                System.out.println("Tente novamente.");
+        System.out.print("\nEscolha uma opção: ");
+        try {
+            option = input.nextInt();
+            if (!(option >= 1 && option <= 7)) {
+                invalidMessage();
                 chooseOption();
             }
-        } while (option < 1 && option > 7);
+        } catch (Exception e) {
+            invalidMessage();
+            chooseOption();
+        }
 
         return option;
+    }
+
+    public void invalidMessage() {
+        System.out.println("\nValor inválido.");
+        System.out.println("Tente novamente.");
     }
 }
