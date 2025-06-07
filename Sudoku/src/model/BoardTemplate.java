@@ -1,6 +1,6 @@
 package model;
 
-public final class BoardTemplate {
+public class BoardTemplate {
     public final static String BOARD_TEMPLATE =
             """
             \n|-|---------------------------------------------------------------------------|-|
