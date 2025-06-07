@@ -19,7 +19,7 @@ public class Menu {
                 option = scanner.nextInt();
                 scanner.nextLine();
 
-                if (!(option >= 0 && option <= 6)) {
+                if (!(option >= 0 && option <= 5)) {
                     menuView.invalidMessage();
                     openMenu();
                     return;
@@ -32,7 +32,10 @@ public class Menu {
             }
 
             directFunction(option);
-            if (option == 6) return;
+            if (option == 5) return;
+            if (game.checkStatus()) {
+                game.displayBoard();
+            }
         }
     }
 
@@ -41,10 +44,9 @@ public class Menu {
             case 0 -> game.newGame();
             case 1 -> game.addNumber();
             case 2 -> game.removeNumber();
-            case 3 -> game.displayBoard();
-            case 4 -> game.getStatus();
-            case 5 -> game.cleanBoard();
-            case 6 -> menuView.gameOverMessage();
+            case 3 -> game.getStatus();
+            case 4 -> game.cleanBoard();
+            case 5 -> menuView.gameOverMessage();
         }
     }
 }

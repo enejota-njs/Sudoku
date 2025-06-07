@@ -16,24 +16,87 @@ public class GameFunctions {
         gameStarted = true;
 
         board.insertInitialValues(new ArrayList<>(List.of(
-                List.of(1, 1, 0, 1, false), List.of(1, 2, 2, 2, true), List.of(1, 3, 3, 3, true), List.of(1, 4, 4, 4, true), List.of(1, 5, 5, 5, true),
-                List.of(1, 6, 6, 6, true), List.of(1, 7, 7, 7, true), List.of(1, 8, 8, 8, true), List.of(1, 9, 9, 9, true),
-                List.of(2, 1, 2, 2, true), List.of(2, 2, 3, 3, true), List.of(2, 3, 4, 4, true), List.of(2, 4, 5, 5, true), List.of(2, 5, 6, 6, true),
-                List.of(2, 6, 7, 7, true), List.of(2, 7, 8, 8, true), List.of(2, 8, 9, 9, true), List.of(2, 9, 1, 1, true),
-                List.of(3, 1, 3, 3, true), List.of(3, 2, 4, 4, true), List.of(3, 3, 5, 5, true), List.of(3, 4, 6, 6, true), List.of(3, 5, 7, 7, true),
-                List.of(3, 6, 8, 8, true), List.of(3, 7, 9, 9, true), List.of(3, 8, 1, 1, true), List.of(3, 9, 2, 2, true),
-                List.of(4, 1, 4, 4, true), List.of(4, 2, 5, 5, true), List.of(4, 3, 6, 6, true), List.of(4, 4, 7, 7, true), List.of(4, 5, 8, 8, true),
-                List.of(4, 6, 9, 9, true), List.of(4, 7, 1, 1, true), List.of(4, 8, 2, 2, true), List.of(4, 9, 3, 3, true),
-                List.of(5, 1, 5, 5, true), List.of(5, 2, 6, 6, true), List.of(5, 3, 7, 7, true), List.of(5, 4, 8, 8, true), List.of(5, 5, 9, 9, true),
-                List.of(5, 6, 1, 1, true), List.of(5, 7, 2, 2, true), List.of(5, 8, 3, 3, true), List.of(5, 9, 4, 4, true),
-                List.of(6, 1, 6, 6, true), List.of(6, 2, 7, 7, true), List.of(6, 3, 8, 8, true), List.of(6, 4, 9, 9, true), List.of(6, 5, 1, 1, true),
-                List.of(6, 6, 2, 2, true), List.of(6, 7, 3, 3, true), List.of(6, 8, 4, 4, true), List.of(6, 9, 5, 5, true),
-                List.of(7, 1, 7, 7, true), List.of(7, 2, 8, 8, true), List.of(7, 3, 9, 9, true), List.of(7, 4, 1, 1, true), List.of(7, 5, 2, 2, true),
-                List.of(7, 6, 3, 3, true), List.of(7, 7, 4, 4, true), List.of(7, 8, 5, 5, true), List.of(7, 9, 6, 6, true),
-                List.of(8, 1, 8, 8, true), List.of(8, 2, 9, 9, true), List.of(8, 3, 1, 1, true), List.of(8, 4, 2, 2, true), List.of(8, 5, 3, 3, true),
-                List.of(8, 6, 4, 4, true), List.of(8, 7, 5, 5, true), List.of(8, 8, 6, 6, true), List.of(8, 9, 7, 7, true),
-                List.of(9, 1, 9, 9, true), List.of(9, 2, 1, 1, true), List.of(9, 3, 2, 2, true), List.of(9, 4, 3, 3, true), List.of(9, 5, 4, 4, true),
-                List.of(9, 6, 5, 5, true), List.of(9, 7, 6, 6, true), List.of(9, 8, 7, 7, true), List.of(9, 9, 8, 8, true)
+                List.of(1, 1, 6, true),
+                List.of(1, 2, 3, false),
+                List.of(1, 3, 1, false),
+                List.of(1, 4, 5, false),
+                List.of(1, 5, 4, false),
+                List.of(1, 6, 9, false),
+                List.of(1, 7, 8, true),
+                List.of(1, 8, 7, true),
+                List.of(1, 9, 2, true),
+                List.of(2, 1, 2, false),
+                List.of(2, 2, 7, true),
+                List.of(2, 3, 5, true),
+                List.of(2, 4, 8, false),
+                List.of(2, 5, 3, false),
+                List.of(2, 6, 1, true),
+                List.of(2, 7, 6, true),
+                List.of(2, 8, 9, false),
+                List.of(2, 9, 4, false),
+                List.of(3, 1, 9, false),
+                List.of(3, 2, 4, false),
+                List.of(3, 3, 8, false),
+                List.of(3, 4, 6, false),
+                List.of(3, 5, 7, false),
+                List.of(3, 6, 2, true),
+                List.of(3, 7, 5, false),
+                List.of(3, 8, 1, false),
+                List.of(3, 9, 3, true),
+                List.of(4, 1, 8, false),
+                List.of(4, 2, 2, true),
+                List.of(4, 3, 3, false),
+                List.of(4, 4, 1, false),
+                List.of(4, 5, 5, true),
+                List.of(4, 6, 7, false),
+                List.of(4, 7, 4, false),
+                List.of(4, 8, 6, false),
+                List.of(4, 9, 9, true),
+                List.of(5, 1, 7, false),
+                List.of(5, 2, 5, false),
+                List.of(5, 3, 4, true),
+                List.of(5, 4, 3, true),
+                List.of(5, 5, 9, false),
+                List.of(5, 6, 6, true),
+                List.of(5, 7, 2, false),
+                List.of(5, 8, 8, false),
+                List.of(5, 9, 1, true),
+                List.of(6, 1, 1, false),
+                List.of(6, 2, 6, true),
+                List.of(6, 3, 9, true),
+                List.of(6, 4, 2, false),
+                List.of(6, 5, 8, false),
+                List.of(6, 6, 4, true),
+                List.of(6, 7, 7, false),
+                List.of(6, 8, 3, false),
+                List.of(6, 9, 5, true),
+                List.of(7, 1, 5, false),
+                List.of(7, 2, 1, false),
+                List.of(7, 3, 6, false),
+                List.of(7, 4, 9, true),
+                List.of(7, 5, 2, false),
+                List.of(7, 6, 8, false),
+                List.of(7, 7, 3, false),
+                List.of(7, 8, 4, false),
+                List.of(7, 9, 7, false),
+                List.of(8, 1, 4, true),
+                List.of(8, 2, 9, false),
+                List.of(8, 3, 2, true),
+                List.of(8, 4, 7, true),
+                List.of(8, 5, 6, false),
+                List.of(8, 6, 3, false),
+                List.of(8, 7, 1, true),
+                List.of(8, 8, 5, false),
+                List.of(8, 9, 8, true),
+                List.of(9, 1, 3, false),
+                List.of(9, 2, 8, false),
+                List.of(9, 3, 7, false),
+                List.of(9, 4, 4, true),
+                List.of(9, 5, 1, false),
+                List.of(9, 6, 5, false),
+                List.of(9, 7, 9, false),
+                List.of(9, 8, 2, true),
+                List.of(9, 9, 6, true)
         )));
 
         gameView.gameStartedMessage();
@@ -53,12 +116,14 @@ public class GameFunctions {
         if (gameStarted) {
             return true;
         }
-        gameView.gameNotStartedMessage();
         return false;
     }
 
     public void addNumber() {
-        if (!checkStatus()) return;
+        if (!checkStatus()) {
+            gameView.gameNotStartedMessage();
+            return;
+        }
 
         gameView.newValueMessage();
         String values = scanner.nextLine().trim();
@@ -90,7 +155,10 @@ public class GameFunctions {
     }
 
     public void removeNumber() {
-        if (!checkStatus()) return;
+        if (!checkStatus()) {
+            gameView.gameNotStartedMessage();
+            return;
+        }
 
         gameView.valueRemovalMessage();
         String values = scanner.nextLine().trim();
@@ -121,8 +189,6 @@ public class GameFunctions {
     }
 
     public void displayBoard() {
-        if (!checkStatus()) return;
-
         board.displayBoard();
     }
 
@@ -135,7 +201,10 @@ public class GameFunctions {
     }
 
     public void cleanBoard() {
-        if (!checkStatus()) return;
+        if (!checkStatus()) {
+            gameView.gameNotStartedMessage();
+            return;
+        }
 
         board.cleanBoard();
     }

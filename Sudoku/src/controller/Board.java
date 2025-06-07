@@ -31,11 +31,13 @@ public class Board {
         for (List<Object> value : values) {
             Integer row = (Integer) value.get(0);
             Integer column = (Integer) value.get(1);
-            Integer currentNumber = (Integer) value.get(2);
-            Integer expectedNumber = (Integer) value.get(3);
-            Boolean isFixed = (Boolean) value.get(4);
+            Integer expectedNumber = (Integer) value.get(2);
+            Boolean isFixed = (Boolean) value.get(3);
 
-            if (currentNumber == 0) {
+            Integer currentNumber;
+            if (isFixed) {
+                currentNumber = expectedNumber;
+            } else {
                 currentNumber = null;
             }
 
